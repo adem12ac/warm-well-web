@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Check } from "lucide-react";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -26,7 +27,13 @@ const ContactForm = () => {
   return (
     <section id="kontakt" className="section-padding bg-warm-50">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Kontakt</span>
           <h2 className="text-3xl md:text-5xl font-heading font-bold mt-3 mb-4">
             Sprechen Sie <span className="text-gradient">uns an</span>
@@ -34,25 +41,48 @@ const ContactForm = () => {
           <p className="text-muted-foreground text-lg">
             Wir beraten Sie gerne – kostenlos und unverbindlich.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-6">
-            {contactInfo.map((item) => (
-              <div key={item.label} className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center shrink-0">
-                  <item.icon className="h-5 w-5 text-accent-foreground" />
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-2 space-y-6"
+          >
+            {contactInfo.map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.4 }}
+                className="flex items-start gap-4"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <item.icon className="h-5 w-5 text-primary" />
                 </div>
                 <p className="text-sm text-muted-foreground pt-2">{item.label}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Form */}
-          <div className="lg:col-span-3">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-3"
+          >
             {submitted ? (
-              <div className="flex flex-col items-center py-16 gap-4 bg-card rounded-lg border">
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="flex flex-col items-center py-16 gap-4 bg-card rounded-lg border"
+              >
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Check className="h-8 w-8 text-primary" />
                 </div>
@@ -61,7 +91,7 @@ const ContactForm = () => {
                 <Button variant="outline" onClick={() => setSubmitted(false)} className="mt-2">
                   Weitere Nachricht senden
                 </Button>
-              </div>
+              </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 bg-card p-6 md:p-8 rounded-lg border">
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -103,7 +133,7 @@ const ContactForm = () => {
                 <Button type="submit" size="lg" className="w-full">Nachricht senden</Button>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

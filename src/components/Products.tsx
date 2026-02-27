@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ShoppingCart, Check } from "lucide-react";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 const products = [
   { id: 1, name: "Viessmann Vitodens 200-W", category: "Heizkessel", price: "ab 3.890 €", desc: "Gas-Brennwertkessel mit bis zu 98% Wirkungsgrad für maximale Energieeffizienz." },
@@ -17,6 +18,15 @@ const products = [
   { id: 5, name: "Vaillant aroTHERM plus", category: "Wärmepumpe", price: "ab 12.500 €", desc: "Luft-Wasser-Wärmepumpe mit natürlichem Kältemittel R290." },
   { id: 6, name: "Geberit Duofix Element", category: "Installation", price: "ab 159 €", desc: "Vorwandelement für Wand-WC mit Spülkasten UP320." },
 ];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.5 },
+  }),
+};
 
 const Products = () => {
   const [selected, setSelected] = useState<typeof products[0] | null>(null);
@@ -35,7 +45,13 @@ const Products = () => {
   return (
     <section id="produkte" className="section-padding">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Unser Sortiment</span>
           <h2 className="text-3xl md:text-5xl font-heading font-bold mt-3 mb-4">
             Produkte <span className="text-gradient">bestellen</span>
@@ -43,32 +59,38 @@ const Products = () => {
           <p className="text-muted-foreground text-lg">
             Hochwertige Markenprodukte – direkt bei uns anfragen und professionell installieren lassen.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product, i) => (
-            <Card
+            <motion.div
               key={product.id}
-              className="group hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 animate-fade-in overflow-hidden"
-              style={{ animationDelay: `${i * 0.08}s` }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={i}
+              variants={fadeUp}
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
             >
-              <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex items-start justify-between mb-3">
-                  <Badge variant="secondary" className="text-xs">{product.category}</Badge>
-                  <span className="text-sm font-semibold text-primary">{product.price}</span>
-                </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{product.name}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">{product.desc}</p>
-                <Button
-                  variant="outline"
-                  className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all"
-                  onClick={() => setSelected(product)}
-                >
-                  <ShoppingCart className="h-4 w-4" />
-                  Jetzt anfragen
-                </Button>
-              </CardContent>
-            </Card>
+              <Card className="group hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 overflow-hidden h-full">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-3">
+                    <Badge variant="secondary" className="text-xs">{product.category}</Badge>
+                    <span className="text-sm font-semibold text-primary">{product.price}</span>
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg mb-2">{product.name}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">{product.desc}</p>
+                  <Button
+                    variant="outline"
+                    className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all"
+                    onClick={() => setSelected(product)}
+                  >
+                    <ShoppingCart className="h-4 w-4" />
+                    Jetzt anfragen
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
