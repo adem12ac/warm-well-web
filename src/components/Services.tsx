@@ -1,66 +1,62 @@
-import { Flame, Droplets, Wrench, ShieldCheck, ThermometerSun, Pipette } from "lucide-react";
+import { Home, Wrench, PaintBucket, Package, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
-import serviceWaermepumpe from "@/assets/service-waermepumpe.jpg";
-import serviceSanitaer from "@/assets/service-sanitaer.jpg";
-import serviceWartung from "@/assets/service-wartung.jpg";
+import serviceHausmeister from "@/assets/service-hausmeister.jpg";
+import serviceTechnik from "@/assets/service-technik.jpg";
+import serviceSanierung from "@/assets/service-sanierung.jpg";
+import serviceMontage from "@/assets/service-montage.jpg";
 
 const services = [
   {
-    icon: Flame,
-    title: "Heizungsinstallation",
-    desc: "Einbau moderner Heizungsanlagen – von Gas über Öl bis hin zu Wärmepumpen und Solarthermie.",
+    icon: Home,
+    title: "Hausmeisterservice",
+    desc: "Fachgerechte Betreuung komplexer Immobilien – von Seniorenwohnanlagen bis Studentenwohnheimen. Mit über 20 Jahren Erfahrung in der Immobilienbewirtschaftung.",
     details: [
-      "Gas- und Öl-Brennwertkessel",
-      "Luft- und Sole-Wärmepumpen",
-      "Solarthermie-Anlagen",
-      "Fußbodenheizung & Heizkörper",
-      "Hybridheizungen",
+      "Technischer Hausmeisterservice & Objektbetreuung",
+      "Wartung und Kleinreparaturen im Innen- und Außenbereich",
+      "Gefährdungsbeurteilungen & Brandschutzkontrollen",
+      "Vertretungsservice bei Krankheit oder Urlaub",
+      "Seniorengerechte Umbauten & Wohnungsanpassungen",
     ],
-    image: serviceWaermepumpe,
-  },
-  {
-    icon: Droplets,
-    title: "Sanitärinstallation",
-    desc: "Komplette Badezimmer-Installationen, Wasseranschlüsse und Abwassersysteme aus einer Hand.",
-    details: [
-      "Badezimmer-Neugestaltung",
-      "Barrierefreie Bäder",
-      "Regenwassernutzung",
-      "Trinkwasserhygiene",
-      "Entwässerungssysteme",
-    ],
-    image: serviceSanitaer,
+    image: serviceHausmeister,
   },
   {
     icon: Wrench,
-    title: "Wartung & Reparatur",
-    desc: "Regelmäßige Wartung und schnelle Reparaturen für Ihre Heizungs- und Sanitäranlagen.",
+    title: "Technische Dienste",
+    desc: "Kompetenz trifft Praxis – sicher und lösungsorientiert. Mit Erfahrung aus über 30 Jahren unterstützen wir Sie bei der technischen Betreuung Ihrer Immobilie.",
     details: [
-      "Jährliche Heizungswartung",
-      "Störungsbeseitigung",
-      "Dichtheitsprüfungen",
-      "Heizkesselreinigung",
-      "Wasserhahn-Reparatur",
+      "Elektro-Kleinarbeiten (Leuchtmittel, Steckdosen)",
+      "Sanitär-Kleinarbeiten (Armaturen, Siphons)",
+      "Pflege von Hebeanlagen, Wasserfiltern & Abflüssen",
+      "Regelmäßige Sichtprüfungen & Brandschutzkontrollen",
+      "Aufzugs-Notbefreiung & Brandmeldeanlagen",
     ],
-    image: serviceWartung,
-  },
-];
-
-const additionalServices = [
-  {
-    icon: ThermometerSun,
-    title: "Energieberatung",
-    desc: "Beratung zu energieeffizienten Lösungen und Fördermöglichkeiten für Ihre Modernisierung. Wir helfen Ihnen, bis zu 45% Energiekosten zu sparen und erstellen individuelle Sanierungsfahrpläne.",
+    image: serviceTechnik,
   },
   {
-    icon: Pipette,
-    title: "Rohrsanierung",
-    desc: "Professionelle Rohrsanierung und Leckortung mit modernster Technik. Kamerabefahrung, grabenlose Sanierung und Druckprüfungen – alles aus einer Hand.",
+    icon: PaintBucket,
+    title: "Wohnungssanierung",
+    desc: "Von der Planung bis zur Schlüsselübergabe – wir übernehmen die komplette Organisation und Umsetzung Ihrer Wohnungssanierung mit geprüften Fachfirmen.",
+    details: [
+      "Erstbesichtigung & individuelle Sanierungsplanung",
+      "Koordination aller Fachfirmen (Elektro, Sanitär, Maler)",
+      "Begleitung & lückenlose Dokumentation",
+      "Qualitätskontrolle & Abnahme aller Gewerke",
+      "Endreinigung & bezugsfertige Übergabe",
+    ],
+    image: serviceSanierung,
   },
   {
-    icon: ShieldCheck,
-    title: "Notdienst 24/7",
-    desc: "Rohrbruch oder Heizungsausfall? Unser Notdienst ist rund um die Uhr für Sie da. Schnelle Reaktionszeiten und faire Preise – auch an Wochenenden und Feiertagen.",
+    icon: Package,
+    title: "Montage Service",
+    desc: "Flexibel, handfest – und genau dann da, wenn's zählt. Ob Möbelaufbau, Reparaturen oder Umzugshilfe – zuverlässig und ordentlich.",
+    details: [
+      "Möbelmontage inkl. Dübelarbeiten & Wandbefestigungen",
+      "Küchenaufbau, Silikonfugen, Rollos & Gardinenleisten",
+      "TV-Halterungen, Spiegel & Badzubehör",
+      "Montage altersgerechter Wohnhilfen (Haltegriffe)",
+      "Kleine Umzugshilfe & Entrümpelung",
+    ],
+    image: serviceMontage,
   },
 ];
 
@@ -75,7 +71,7 @@ const fadeUp = {
 
 const Services = () => {
   return (
-    <section id="leistungen" className="section-padding bg-warm-50">
+    <section id="leistungen" className="section-padding bg-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -85,18 +81,18 @@ const Services = () => {
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-            Unsere Leistungen
+            Unser Leistungsspektrum
           </span>
           <h2 className="text-3xl md:text-5xl font-heading font-bold mt-3 mb-4">
-            Kompetenz in <span className="text-gradient">Heizung & Sanitär</span>
+            Erfahren, vielseitig <span className="text-gradient">und zuverlässig</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Von der Planung bis zur Umsetzung – wir bieten Ihnen das volle Leistungsspektrum.
+            Von klassischen Hausmeisterdiensten über Renovierungsarbeiten bis hin zu handwerklichen 
+            Einzelaufträgen – wir sind Ihr verlässlicher Partner, wenn es darauf ankommt.
           </p>
         </motion.div>
 
-        {/* Main services with images */}
-        <div className="space-y-20 mb-20">
+        <div className="space-y-20">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -120,14 +116,14 @@ const Services = () => {
                     alt={service.title}
                     className="w-full h-72 md:h-96 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
+                  <div className="absolute top-4 left-4 bg-primary p-3 rounded-xl">
+                    <service.icon className="h-6 w-6 text-primary-foreground" />
+                  </div>
                 </motion.div>
               </div>
 
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                  <service.icon className="h-7 w-7 text-primary" />
-                </div>
                 <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground text-lg mb-5">{service.desc}</p>
                 <ul className="space-y-2">
@@ -140,34 +136,12 @@ const Services = () => {
                       transition={{ duration: 0.3 }}
                       className="flex items-center gap-3 text-sm text-muted-foreground"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      <ShieldCheck className="h-4 w-4 text-primary shrink-0" />
                       {detail}
                     </motion.li>
                   ))}
                 </ul>
               </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Additional services */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {additionalServices.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={i}
-              variants={fadeUp}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-card border border-border/50 rounded-xl p-6 shadow-sm hover:shadow-lg hover:shadow-primary/5 transition-shadow"
-            >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <service.icon className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-heading font-semibold text-lg mb-2">{service.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
             </motion.div>
           ))}
         </div>
