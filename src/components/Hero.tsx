@@ -2,28 +2,35 @@ import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import slideBathroom from "@/assets/slide-bathroom.jpg";
-import slideHeating from "@/assets/slide-heating.jpg";
-import slideService from "@/assets/slide-service.jpg";
+import heroErca from "@/assets/hero-erca.jpg";
+import slideHausmeister from "@/assets/slide-hausmeister.jpg";
+import slideSanierung from "@/assets/slide-sanierung.jpg";
+import slideMontage from "@/assets/slide-montage.jpg";
 
 const slides = [
   {
-    image: slideBathroom,
-    title: "Moderne Bäder",
-    highlight: "nach Maß",
-    desc: "Wir verwandeln Ihr Badezimmer in eine Wohlfühloase – mit modernster Technik und zeitlosem Design.",
+    image: heroErca,
+    title: "Willkommen bei",
+    highlight: "ERCA-Dienstleistungen",
+    desc: "Ihr zuverlässiger Partner für Hausmeister- und Handwerkerservices in Essen und Umgebung.",
   },
   {
-    image: slideHeating,
-    title: "Effiziente Heizung",
-    highlight: "für Ihr Zuhause",
-    desc: "Professionelle Heizungsinstallation mit höchster Energieeffizienz. Wärmepumpen, Gas- und Solarthermie.",
+    image: slideHausmeister,
+    title: "Hausmeisterservice",
+    highlight: "mit Verantwortung",
+    desc: "Über 30 Jahre Erfahrung in der technischen Objektbetreuung – sicher, verlässlich und dokumentiert.",
   },
   {
-    image: slideService,
-    title: "Zuverlässiger",
-    highlight: "Service 24/7",
-    desc: "Wartung, Reparatur und Notdienst – wir sind immer für Sie da, wenn Sie uns brauchen.",
+    image: slideSanierung,
+    title: "Wohnungssanierung",
+    highlight: "aus einer Hand",
+    desc: "Von der Planung bis zur Schlüsselübergabe – wir koordinieren alle Gewerke für Sie.",
+  },
+  {
+    image: slideMontage,
+    title: "Montage &",
+    highlight: "Handwerkerservice",
+    desc: "Möbelaufbau, Kücheninstallation, Reparaturen – flexibel und zuverlässig.",
   },
 ];
 
@@ -44,7 +51,6 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background slides */}
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -59,11 +65,10 @@ const Hero = () => {
             alt={slides[current].title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/40" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Content */}
       <div className="container relative z-10 pt-20">
         <div className="max-w-2xl">
           <motion.div
@@ -74,7 +79,7 @@ const Hero = () => {
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-sm font-medium text-primary-foreground/90">
-              Ihr Partner für Heizung & Sanitär
+              Hausmeister- & Handwerkerservice in Essen
             </span>
           </motion.div>
 
@@ -109,13 +114,15 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="text-base gap-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              asChild
             >
-              <Phone className="h-4 w-4" />
-              0123 456 789
+              <a href="tel:+4915216399326">
+                <Phone className="h-4 w-4" />
+                +49 152 16 39 93 26
+              </a>
             </Button>
           </motion.div>
 
-          {/* Trust indicators */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -123,9 +130,9 @@ const Hero = () => {
             className="flex flex-wrap gap-8 mt-12"
           >
             {[
-              { value: "20+", label: "Jahre Erfahrung" },
-              { value: "2.500+", label: "Zufriedene Kunden" },
-              { value: "24h", label: "Notdienst" },
+              { value: "30+", label: "Jahre Erfahrung" },
+              { value: "500+", label: "Betreute Objekte" },
+              { value: "24/7", label: "Notdienst" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-2xl font-heading font-bold text-primary">{stat.value}</div>
@@ -136,7 +143,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Slide controls */}
       <div className="absolute bottom-8 right-8 z-20 flex items-center gap-3">
         <button
           onClick={prev}

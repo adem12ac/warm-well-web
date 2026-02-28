@@ -10,32 +10,24 @@ const Impressum = () => (
       <div className="prose prose-sm text-muted-foreground space-y-6">
         <div>
           <h2 className="text-lg font-heading font-semibold text-foreground">Angaben gemäß § 5 TMG</h2>
-          <p>Wärme&Wasser GmbH<br />Musterstraße 42<br />12345 Musterstadt</p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-heading font-semibold text-foreground">Vertreten durch</h2>
-          <p>Max Mustermann, Geschäftsführer</p>
+          <p>ERCA-Dienstleistungen<br />Inhaber: Erkan Catak<br />Juliusstraße 21<br />45128 Essen</p>
         </div>
 
         <div>
           <h2 className="text-lg font-heading font-semibold text-foreground">Kontakt</h2>
-          <p>Telefon: 0123 456 789<br />E-Mail: info@waerme-wasser.de</p>
+          <p>Telefon: +49 152 16 39 93 26<br />E-Mail: info@erca-service.de</p>
         </div>
 
         <div>
-          <h2 className="text-lg font-heading font-semibold text-foreground">Registereintrag</h2>
-          <p>Eintragung im Handelsregister.<br />Registergericht: Amtsgericht Musterstadt<br />Registernummer: HRB 12345</p>
-        </div>
+          <h2 className="text-lg font-heading font-semibold text-foreground">Haftungsausschluss</h2>
+          <h3 className="text-base font-semibold text-foreground mt-3">Haftung für Inhalte</h3>
+          <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+          
+          <h3 className="text-base font-semibold text-foreground mt-3">Haftung für Links</h3>
+          <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.</p>
 
-        <div>
-          <h2 className="text-lg font-heading font-semibold text-foreground">Umsatzsteuer-ID</h2>
-          <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE123456789</p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-heading font-semibold text-foreground">Berufsbezeichnung und berufsrechtliche Regelungen</h2>
-          <p>Berufsbezeichnung: Installateur- und Heizungsbaumeister<br />Zuständige Kammer: Handwerkskammer Musterstadt</p>
+          <h3 className="text-base font-semibold text-foreground mt-3">Urheberrecht</h3>
+          <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
         </div>
 
         <div>
