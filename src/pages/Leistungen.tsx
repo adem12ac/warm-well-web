@@ -1,65 +1,93 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import { Hammer, Thermometer, Building2, Wrench, CheckCircle2, ArrowRight } from "lucide-react";
+import { Building2, Hammer, Trash2, Accessibility, Truck, CheckCircle2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import serviceRenovation from "@/assets/service-renovation.jpg";
-import serviceHeating from "@/assets/service-heating.jpg";
-import serviceProperty from "@/assets/service-property.jpg";
+import serviceObjektbetreuung from "@/assets/service-objektbetreuung.jpg";
+import serviceSanierung from "@/assets/service-sanierung-new.jpg";
+import serviceEntsorgung from "@/assets/service-entsorgung.jpg";
+import serviceBarrierefrei from "@/assets/service-barrierefrei.jpg";
+import serviceUmzug from "@/assets/service-umzug.jpg";
 
 const services = [
-  {
-    id: "sanierung",
-    icon: Hammer,
-    title: "Sanierung & Bau",
-    subtitle: "Neue Qualität für Ihre Immobilie",
-    description: "Von der Schönheitsrenovierung bis zur Komplettsanierung bieten wir das vollständige Handwerks-Paket. Wir koordinieren alle Gewerke und sind Ihr einziger Ansprechpartner – termingerecht und budgettreu.",
-    image: serviceRenovation,
-    features: [
-      "Wohnungssanierung nach Mieterwechsel",
-      "Schimmel- & Feuchtigkeitsbeseitigung",
-      "Malerarbeiten & Bodenbeläge",
-      "Komplette Badsanierung",
-      "Küchen- & Innenausbau",
-      "Fassadensanierung & Außenarbeiten",
-      "Trockenbau & Raumaufteilung",
-      "Schlüsselfertige Übergabe",
-    ],
-  },
-  {
-    id: "heizung",
-    icon: Thermometer,
-    title: "Heizung & Sanitär",
-    subtitle: "Wärme & Komfort auf höchstem Niveau",
-    description: "Von der Heizungsinstallation über Badsanierungen bis zum 24h-Notdienst – wir sorgen für funktionsfähige und effiziente Haustechnik. Qualifiziert und normgerecht ausgeführt.",
-    image: serviceHeating,
-    features: [
-      "Heizungsinstallation & -modernisierung",
-      "Wartung & Reparatur aller Anlagen",
-      "Komplette Badsanierungen",
-      "Sanitärinstallationen aller Art",
-      "Rohrleitungsbau & -sanierung",
-      "Thermografie & Energieberatung",
-      "Wärmepumpen & Solarthermie",
-      "24h-Notdienst bei Rohrbruch & Heizungsausfall",
-    ],
-  },
   {
     id: "objektbetreuung",
     icon: Building2,
     title: "Objektbetreuung & Hausmeisterservice",
-    subtitle: "Full-Service für Ihren Immobilienbestand",
+    subtitle: "Professionelle Immobilienbetreuung in Berlin",
     description: "Als erfahrener Objektbetreuer übernehmen wir die Verantwortung für den technischen und infrastrukturellen Betrieb Ihrer Immobilien – transparent, dokumentiert und zuverlässig.",
-    image: serviceProperty,
+    image: serviceObjektbetreuung,
     features: [
-      "Technisches Gebäudemanagement",
-      "Regelmäßige Begehungen & Dokumentation",
-      "Koordination von Handwerkern & Firmen",
+      "Regelmäßige Gebäudebegehungen",
       "Grünanlagenpflege & Außenanlagen",
       "Winterdienst & Streupflicht",
-      "Brandschutz & Sicherheitstechnik",
       "Kleinreparaturen & Instandhaltung",
-      "Aufzugüberwachung & -wartung",
+      "Treppenhausreinigung",
+      "Koordination von Handwerkern",
+    ],
+  },
+  {
+    id: "sanierung",
+    icon: Hammer,
+    title: "Sanierung & Renovierung",
+    subtitle: "Neue Qualität für Ihre Räume",
+    description: "Von der Schönheitsrenovierung bis zur Komplettsanierung – wir bieten alle Gewerke aus einer Hand. Sauber, termingerecht und in höchster Qualität.",
+    image: serviceSanierung,
+    features: [
+      "Wohnungssanierung nach Mieterwechsel",
+      "Malerarbeiten & Tapezierarbeiten",
+      "Bodenbeläge (Laminat, Vinyl, Fliesen)",
+      "Trockenbau & Raumaufteilung",
+      "Küchen- & Innenausbau",
+      "Fassadenarbeiten",
+    ],
+  },
+  {
+    id: "entsorgung",
+    icon: Trash2,
+    title: "Entsorgung & Entrümpelung",
+    subtitle: "Professionell und fachgerecht entsorgen",
+    description: "Wohnungsauflösungen, Entrümpelungen und fachgerechte Entsorgung – schnell, diskret und umweltbewusst. Wir kümmern uns um alles.",
+    image: serviceEntsorgung,
+    features: [
+      "Komplette Wohnungsauflösungen",
+      "Kellerräumung & Dachbodenräumung",
+      "Sperrmüllentsorgung",
+      "Besenreine Übergabe",
+      "Fachgerechte Entsorgung nach Vorschrift",
+      "Nachmieter-freundliche Übergabe",
+    ],
+  },
+  {
+    id: "barrierefrei",
+    icon: Accessibility,
+    title: "Barrierefreie Sanierung",
+    subtitle: "Wohnen ohne Hindernisse",
+    description: "Wir schaffen barrierefreie Lebensräume – ebenerdige Duschen, rutschfeste Böden, Haltegriffe und schwellenlose Übergänge für mehr Sicherheit im Alltag.",
+    image: serviceBarrierefrei,
+    features: [
+      "Ebenerdige Duschen",
+      "Rutschfeste Bodenbeläge",
+      "Haltegriffe & Stützklappgriffe",
+      "Schwellenlose Übergänge",
+      "Unterfahrbare Waschtische",
+      "Altersgerechte Badgestaltung",
+    ],
+  },
+  {
+    id: "umzug",
+    icon: Truck,
+    title: "Kleiner Umzugsservice",
+    subtitle: "Unkompliziert und günstig umziehen",
+    description: "Unser privater Umzugsservice in Berlin – wir helfen beim Tragen, Transportieren und Aufbauen. Ideal für kleinere Umzüge und Einzelstücke.",
+    image: serviceUmzug,
+    features: [
+      "Möbeltransport innerhalb Berlins",
+      "Ein- und Auspackhilfe",
+      "Möbelauf- und -abbau",
+      "Flexible Terminplanung",
+      "Günstige Pauschalpreise",
+      "Einzelstück-Transport",
     ],
   },
 ];
@@ -68,7 +96,6 @@ const Leistungen = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      {/* Hero */}
       <section className="pt-32 pb-20 bg-foreground text-background">
         <div className="container">
           <AnimatedSection>
@@ -77,16 +104,15 @@ const Leistungen = () => {
               Leistungen
             </span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Unser Leistungs&shy;spektrum
+              Unsere Dienstleistungen in Berlin
             </h1>
             <p className="text-background/60 text-lg max-w-2xl">
-              Drei Fachbereiche, ein kompetenter Partner. Wir bieten ein vollständiges Dienstleistungsportfolio rund um Ihre Immobilie.
+              Objektbetreuung, Sanierung, Entrümpelung, barrierefreie Umbauten und Umzugsservice – alles aus einer Hand.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Services */}
       <section className="section-padding">
         <div className="container space-y-32">
           {services.map((service, i) => (
@@ -116,7 +142,7 @@ const Leistungen = () => {
                     to="/kontakt"
                     className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
                   >
-                    Jetzt anfragen
+                    Kostenloses Angebot anfordern
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>

@@ -15,11 +15,13 @@ const Datenschutz = () => (
 
         <div>
           <h2 className="text-lg font-heading font-semibold text-foreground">2. Verantwortliche Stelle</h2>
-          <p>ERCA-Dienstleistungen<br />Inhaber: Erkan Catak<br />Juliusstraße 21, 45128 Essen<br />E-Mail: info@erca-service.de<br />Telefon: +49 152 16 39 93 26</p>
+          <p>ERCA Dienstleistungen<br />Inhaber: Erkan Catak<br />Berlin<br />E-Mail: info@erca-service.de<br />Telefon: +49 152 12 97 13 88</p>
         </div>
 
         <div>
           <h2 className="text-lg font-heading font-semibold text-foreground">3. Datenerfassung auf dieser Website</h2>
+          <h3 className="text-base font-semibold text-foreground mt-3">Cookies</h3>
+          <p>Unsere Website verwendet Cookies. Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Cookies helfen uns dabei, unser Angebot nutzerfreundlicher zu gestalten. Sie können die Verwendung von Cookies in Ihren Browsereinstellungen steuern.</p>
           <h3 className="text-base font-semibold text-foreground mt-3">Kontaktformular</h3>
           <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
           <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.</p>

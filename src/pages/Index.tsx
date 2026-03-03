@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsSection from "@/components/StatsSection";
+import AboutPreview from "@/components/AboutPreview";
 import ServicesOverview from "@/components/ServicesOverview";
 import TrustSection from "@/components/TrustSection";
-import ClientSegments from "@/components/ClientSegments";
-import ProjectsPreview from "@/components/ProjectsPreview";
+import CtaSection from "@/components/CtaSection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
@@ -14,10 +14,10 @@ const Index = () => {
       <Navbar />
       <Hero />
       <StatsSection />
+      <AboutPreview />
       <ServicesOverview />
       <TrustSection />
-      <ClientSegments />
-      <ProjectsPreview />
+      <CtaSection />
       <ContactForm />
       <Footer />
     </div>

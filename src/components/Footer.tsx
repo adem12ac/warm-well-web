@@ -1,22 +1,16 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import logo from "@/assets/logo-erca.gif";
 
 const footerLinks = [
   {
     title: "Leistungen",
     links: [
-      { label: "Sanierung & Bau", href: "/leistungen" },
-      { label: "Heizung & Sanitär", href: "/leistungen" },
       { label: "Objektbetreuung", href: "/leistungen" },
-    ],
-  },
-  {
-    title: "Kunden",
-    links: [
-      { label: "Großkunden", href: "/grosskunden" },
-      { label: "Privatkunden", href: "/privatkunden" },
-      { label: "Produkte & Preise", href: "/produkte" },
-      { label: "Projekte", href: "/projekte" },
+      { label: "Sanierung & Renovierung", href: "/leistungen" },
+      { label: "Entsorgung & Entrümpelung", href: "/leistungen" },
+      { label: "Barrierefreie Sanierung", href: "/leistungen" },
+      { label: "Umzugsservice", href: "/leistungen" },
     ],
   },
   {
@@ -36,34 +30,26 @@ const Footer = () => {
       <div className="border-b border-background/10">
         <div className="container py-16 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="font-heading text-2xl md:text-3xl font-bold">Bereit für Ihr nächstes Projekt?</h3>
-            <p className="text-background/60 mt-2">Kontaktieren Sie uns für eine kostenlose Erstberatung.</p>
+            <h3 className="font-heading text-2xl md:text-3xl font-bold">Kostenloses Angebot anfordern</h3>
+            <p className="text-background/60 mt-2">Kontaktieren Sie uns – wir beraten Sie gerne unverbindlich.</p>
           </div>
           <Link to="/kontakt" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity">
-            Kostenloses Angebot <ArrowRight className="h-4 w-4" />
+            Jetzt anfragen <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>
       <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-lg">E</span>
-              </div>
-              <div>
-                <span className="font-heading font-bold text-lg block leading-tight">ERCA</span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-background/50">Dienstleistungen</span>
-              </div>
-            </div>
+            <img src={logo} alt="ERCA Dienstleistungen" className="h-14 w-auto mb-6 brightness-0 invert" />
             <p className="text-background/60 text-sm leading-relaxed mb-6 max-w-sm">
-              Ihr zuverlässiger Partner für professionelle Immobilienbetreuung in Essen und der gesamten Region. Über 30 Jahre Erfahrung.
+              Ihr zuverlässiger Partner für Objektbetreuung, Sanierung, Entrümpelung und barrierefreie Umbauten in Berlin. Über 30 Jahre Erfahrung.
             </p>
             <div className="space-y-3 text-sm text-background/60">
-              <div className="flex items-center gap-3"><MapPin className="h-4 w-4 shrink-0" /><span>Juliusstraße 21, 45128 Essen</span></div>
-              <a href="tel:+4915216399326" className="flex items-center gap-3 hover:text-background transition-colors"><Phone className="h-4 w-4 shrink-0" /><span>+49 152 16 39 93 26</span></a>
+              <div className="flex items-center gap-3"><MapPin className="h-4 w-4 shrink-0" /><span>Berlin</span></div>
+              <a href="tel:+4915212971388" className="flex items-center gap-3 hover:text-background transition-colors"><Phone className="h-4 w-4 shrink-0" /><span>+49 152 12 97 13 88</span></a>
               <a href="mailto:info@erca-service.de" className="flex items-center gap-3 hover:text-background transition-colors"><Mail className="h-4 w-4 shrink-0" /><span>info@erca-service.de</span></a>
-              <div className="flex items-center gap-3"><Clock className="h-4 w-4 shrink-0" /><span>Mo–Fr: 08:00–17:00 Uhr</span></div>
+              <div className="flex items-center gap-3"><Clock className="h-4 w-4 shrink-0" /><span>Mo–Fr: 08:00–18:00 Uhr</span></div>
             </div>
           </div>
           {footerLinks.map((group) => (

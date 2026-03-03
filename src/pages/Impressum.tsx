@@ -10,12 +10,12 @@ const Impressum = () => (
       <div className="prose prose-sm text-muted-foreground space-y-6">
         <div>
           <h2 className="text-lg font-heading font-semibold text-foreground">Angaben gemäß § 5 TMG</h2>
-          <p>ERCA-Dienstleistungen<br />Inhaber: Erkan Catak<br />Juliusstraße 21<br />45128 Essen</p>
+          <p>ERCA Dienstleistungen<br />Inhaber: Erkan Catak<br />Berlin</p>
         </div>
 
         <div>
           <h2 className="text-lg font-heading font-semibold text-foreground">Kontakt</h2>
-          <p>Telefon: +49 152 16 39 93 26<br />E-Mail: info@erca-service.de</p>
+          <p>Telefon: +49 152 12 97 13 88<br />E-Mail: info@erca-service.de</p>
         </div>
 
         <div>

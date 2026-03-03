@@ -16,7 +16,7 @@ const Kontakt = () => {
             Sprechen Sie mit uns
           </h1>
           <p className="text-background/60 text-lg max-w-2xl">
-            Wir antworten innerhalb von 24 Stunden auf Ihre Anfrage.
+            Wir antworten innerhalb von 24 Stunden auf Ihre Anfrage. Oder rufen Sie uns direkt an.
           </p>
         </div>
       </section>

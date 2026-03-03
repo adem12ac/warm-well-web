@@ -1,36 +1,43 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Award, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import heroMain from "@/assets/hero-main.jpg";
-import serviceRenovation from "@/assets/service-renovation.jpg";
-import serviceHeating from "@/assets/service-heating.jpg";
-import serviceProperty from "@/assets/service-property.jpg";
+import heroBuilding from "@/assets/hero-building.jpg";
+import heroRenovation from "@/assets/hero-renovation.jpg";
+import serviceObjektbetreuung from "@/assets/service-objektbetreuung.jpg";
+import serviceEntsorgung from "@/assets/service-entsorgung.jpg";
+import serviceBarrierefrei from "@/assets/service-barrierefrei.jpg";
 
 const slides = [
   {
-    image: heroMain,
-    subtitle: "Über 30 Jahre Erfahrung",
-    title: "Ihr Partner für\nGroßprojekte",
-    description: "Von Wohnanlagen über Pflegeheime bis zu Gewerbeimmobilien – wir betreuen, sanieren und modernisieren Ihren Immobilienbestand. Professionell. Termingerecht. Aus einer Hand.",
+    image: heroBuilding,
+    subtitle: "Ihr Partner in Berlin",
+    title: "Objektbetreuung &\nHausmeisterservice",
+    description: "Professionelle Betreuung Ihrer Immobilien in Berlin – zuverlässig, sauber und termingerecht. Alles aus einer Hand.",
   },
   {
-    image: serviceRenovation,
-    subtitle: "Komplettsanierung",
-    title: "Modernisierung\nauf höchstem Niveau",
-    description: "Wohnungssanierung, Badsanierung, Fassadenarbeiten – von der Planung bis zur schlüsselfertigen Übergabe koordinieren wir sämtliche Gewerke.",
+    image: heroRenovation,
+    subtitle: "Sanierung & Renovierung",
+    title: "Modernisierung\nmit Qualität",
+    description: "Von der Wohnungssanierung bis zur Komplettrenovierung – wir verwandeln Ihre Räume. Professionell und sauber.",
   },
   {
-    image: serviceHeating,
-    subtitle: "Heizung & Sanitär",
-    title: "Effiziente\nHaustechnik",
-    description: "Installation, Wartung und 24h-Notdienst für Heizungs- und Sanitäranlagen in Mehrfamilienhäusern und gewerblichen Objekten.",
+    image: serviceEntsorgung,
+    subtitle: "Entsorgung & Entrümpelung",
+    title: "Platz schaffen.\nOrdnung bringen.",
+    description: "Wohnungsauflösungen, Entrümpelungen und fachgerechte Entsorgung in Berlin – schnell und unkompliziert.",
   },
   {
-    image: serviceProperty,
-    subtitle: "Objektbetreuung",
-    title: "Full-Service für\nIhren Bestand",
-    description: "Hausmeisterservice, technisches Gebäudemanagement und professionelle Objektbetreuung für Hausverwaltungen und Investoren.",
+    image: serviceBarrierefrei,
+    subtitle: "Barrierefreie Sanierung",
+    title: "Wohnen ohne\nBarrieren",
+    description: "Barrierefreie Badsanierungen und altersgerechte Umbauten – für mehr Sicherheit und Komfort im eigenen Zuhause.",
+  },
+  {
+    image: serviceObjektbetreuung,
+    subtitle: "Umzugsservice",
+    title: "Ihr kleiner\nUmzugshelfer",
+    description: "Privater Umzugsservice in Berlin – wir helfen beim Tragen, Transportieren und Aufbauen. Unkompliziert und günstig.",
   },
 ];
 
@@ -55,7 +62,7 @@ const Hero = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="absolute inset-0"
         >
-          <img src={slide.image} alt="" className="w-full h-full object-cover" />
+          <img src={slide.image} alt={slide.subtitle} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-foreground/20" />
         </motion.div>
       </AnimatePresence>
@@ -85,7 +92,7 @@ const Hero = () => {
                   to="/kontakt"
                   className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity"
                 >
-                  Kostenloses Angebot
+                  Jetzt anfragen
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -97,12 +104,6 @@ const Hero = () => {
               </div>
             </motion.div>
           </AnimatePresence>
-
-          <div className="flex flex-wrap gap-6 mt-14 text-background/50 text-xs">
-            <div className="flex items-center gap-2"><Shield className="h-4 w-4" /><span>TÜV-zertifiziert</span></div>
-            <div className="flex items-center gap-2"><Award className="h-4 w-4" /><span>25+ Fachzertifikate</span></div>
-            <div className="flex items-center gap-2"><Clock className="h-4 w-4" /><span>24h Notdienst</span></div>
-          </div>
         </div>
       </div>
 
