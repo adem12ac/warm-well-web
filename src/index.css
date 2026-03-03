@@ -7,55 +7,55 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
+    --foreground: 210 20% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 210 20% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 210 20% 12%;
 
-    --primary: 215 90% 32%;
+    --primary: 200 72% 33%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 20% 10%;
+    --secondary: 210 14% 96%;
+    --secondary-foreground: 210 20% 12%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 210 14% 96%;
+    --muted-foreground: 210 10% 46%;
 
-    --accent: 38 92% 50%;
+    --accent: 24 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 215 90% 32%;
+    --border: 210 13% 91%;
+    --input: 210 13% 91%;
+    --ring: 200 72% 33%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 220 20% 10%;
-    --sidebar-primary: 215 90% 32%;
+    --sidebar-foreground: 210 20% 12%;
+    --sidebar-primary: 200 72% 33%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 220 20% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 215 90% 32%;
+    --sidebar-accent: 210 14% 96%;
+    --sidebar-accent-foreground: 210 20% 12%;
+    --sidebar-border: 210 13% 91%;
+    --sidebar-ring: 200 72% 33%;
 
-    --navy: 215 90% 12%;
-    --navy-light: 215 60% 22%;
-    --warm-50: 220 14% 98%;
-    --warm-100: 220 14% 96%;
-    --warm-200: 220 13% 91%;
+    --navy: 200 72% 12%;
+    --navy-light: 200 50% 22%;
+    --warm-50: 210 14% 98%;
+    --warm-100: 210 14% 96%;
+    --warm-200: 210 13% 91%;
 
-    --chart-1: 215 90% 32%;
-    --chart-2: 38 92% 50%;
-    --chart-3: 220 10% 46%;
-    --chart-4: 215 60% 22%;
-    --chart-5: 0 0% 40%;
+    --chart-1: 200 72% 33%;
+    --chart-2: 24 80% 50%;
+    --chart-3: 210 10% 46%;
+    --chart-4: 200 50% 22%;
+    --chart-5: 120 40% 40%;
 
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
     --font-serif: 'Playfair Display', Georgia, serif;
@@ -74,38 +74,30 @@
   }
 
   .dark {
-    --background: 220 20% 6%;
+    --background: 210 20% 6%;
     --foreground: 0 0% 95%;
-    --card: 220 18% 10%;
+    --card: 210 18% 10%;
     --card-foreground: 0 0% 95%;
-    --popover: 220 18% 10%;
+    --popover: 210 18% 10%;
     --popover-foreground: 0 0% 95%;
-    --primary: 215 80% 55%;
+    --primary: 200 65% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 14%;
+    --secondary: 210 14% 14%;
     --secondary-foreground: 0 0% 95%;
-    --muted: 220 14% 14%;
-    --muted-foreground: 220 10% 60%;
-    --accent: 38 92% 55%;
+    --muted: 210 14% 14%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 24 80% 55%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 14% 18%;
-    --input: 220 14% 18%;
-    --ring: 215 80% 55%;
-    --navy: 215 70% 70%;
-    --navy-light: 215 50% 50%;
-    --warm-50: 220 14% 10%;
-    --warm-100: 220 14% 14%;
-    --warm-200: 220 13% 18%;
-    --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.1);
-    --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.15);
-    --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.2);
-    --shadow: 0 4px 16px -4px hsl(0 0% 0% / 0.25);
-    --shadow-md: 0 8px 24px -6px hsl(0 0% 0% / 0.3);
-    --shadow-lg: 0 16px 48px -12px hsl(0 0% 0% / 0.35);
-    --shadow-xl: 0 24px 64px -16px hsl(0 0% 0% / 0.4);
-    --shadow-2xl: 0 32px 80px -20px hsl(0 0% 0% / 0.5);
+    --border: 210 14% 18%;
+    --input: 210 14% 18%;
+    --ring: 200 65% 50%;
+    --navy: 200 50% 70%;
+    --navy-light: 200 40% 50%;
+    --warm-50: 210 14% 10%;
+    --warm-100: 210 14% 14%;
+    --warm-200: 210 13% 18%;
   }
 }
 
@@ -123,7 +115,7 @@
   }
 
   ::selection {
-    background: hsl(215 90% 32% / 0.15);
+    background: hsl(200 72% 33% / 0.15);
   }
 }
 
@@ -141,7 +133,6 @@
   }
 }
 
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }

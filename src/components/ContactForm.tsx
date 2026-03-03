@@ -7,13 +7,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import AnimatedSection from "@/components/AnimatedSection";
+import { Link } from "react-router-dom";
 
 interface ContactFormProps {
-  prefillProduct?: string;
+  prefillSubject?: string;
   compact?: boolean;
 }
 
-const ContactForm = ({ prefillProduct, compact = false }: ContactFormProps) => {
+const ContactForm = ({ prefillSubject, compact = false }: ContactFormProps) => {
   const { toast } = useToast();
   const [agreed, setAgreed] = useState(false);
 
@@ -43,7 +44,7 @@ const ContactForm = ({ prefillProduct, compact = false }: ContactFormProps) => {
               <span className="text-primary">Ihre Anfrage</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              Haben Sie Fragen oder möchten ein individuelles Angebot? Wir antworten innerhalb von 24 Stunden.
+              Schreiben Sie uns oder rufen Sie an – wir antworten innerhalb von 24 Stunden.
             </p>
           </AnimatedSection>
         )}
@@ -53,10 +54,10 @@ const ContactForm = ({ prefillProduct, compact = false }: ContactFormProps) => {
             <AnimatedSection direction="left">
               <div className="space-y-8">
                 {[
-                  { icon: MapPin, label: "Adresse", value: "Juliusstraße 21, 45128 Essen" },
-                  { icon: Phone, label: "Telefon", value: "+49 152 16 39 93 26", href: "tel:+4915216399326" },
+                  { icon: MapPin, label: "Adresse", value: "Berlin" },
+                  { icon: Phone, label: "Telefon", value: "+49 152 12 97 13 88", href: "tel:+4915212971388" },
                   { icon: Mail, label: "E-Mail", value: "info@erca-service.de", href: "mailto:info@erca-service.de" },
-                  { icon: Clock, label: "Öffnungszeiten", value: "Mo–Fr: 08:00–17:00 Uhr" },
+                  { icon: Clock, label: "Erreichbarkeit", value: "Mo–Fr: 08:00–18:00 Uhr" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -74,12 +75,6 @@ const ContactForm = ({ prefillProduct, compact = false }: ContactFormProps) => {
                     </div>
                   </div>
                 ))}
-                <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10">
-                  <p className="font-medium text-sm mb-1">🆘 24h-Notdienst</p>
-                  <a href="tel:+4915216399326" className="text-primary font-bold text-lg">
-                    +49 152 16 39 93 26
-                  </a>
-                </div>
               </div>
             </AnimatedSection>
           )}
@@ -98,21 +93,22 @@ const ContactForm = ({ prefillProduct, compact = false }: ContactFormProps) => {
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Telefon</label>
-                  <Input type="tel" placeholder="+49 123 456 789" className="h-12 rounded-lg" />
+                  <label className="text-sm font-medium mb-2 block">Telefon *</label>
+                  <Input type="tel" placeholder="+49 123 456 789" required className="h-12 rounded-lg" />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-2 block">Betreff *</label>
-                  <Select defaultValue={prefillProduct ? "produkt" : ""}>
+                  <Select defaultValue={prefillSubject || ""}>
                     <SelectTrigger className="h-12 rounded-lg">
                       <SelectValue placeholder="Bitte wählen" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="sanierung">Sanierung & Bau</SelectItem>
-                      <SelectItem value="heizung">Heizung & Sanitär</SelectItem>
-                      <SelectItem value="objektbetreuung">Objektbetreuung</SelectItem>
-                      <SelectItem value="hausmeister">Hausmeisterservice</SelectItem>
-                      <SelectItem value="produkt">Produktanfrage</SelectItem>
+                      <SelectItem value="objektbetreuung">Objektbetreuung / Hausmeisterservice</SelectItem>
+                      <SelectItem value="sanierung">Sanierung & Renovierung</SelectItem>
+                      <SelectItem value="entsorgung">Entsorgung & Entrümpelung</SelectItem>
+                      <SelectItem value="barrierefrei">Barrierefreie Sanierung</SelectItem>
+                      <SelectItem value="umzug">Umzugsservice</SelectItem>
+                      <SelectItem value="angebot">Kostenloses Angebot</SelectItem>
                       <SelectItem value="sonstiges">Sonstiges</SelectItem>
                     </SelectContent>
                   </Select>
@@ -125,7 +121,6 @@ const ContactForm = ({ prefillProduct, compact = false }: ContactFormProps) => {
                   required
                   rows={5}
                   className="rounded-lg resize-none"
-                  defaultValue={prefillProduct ? `Anfrage zum Produkt: ${prefillProduct}` : ""}
                 />
               </div>
               <div className="flex items-start gap-3">
@@ -136,7 +131,7 @@ const ContactForm = ({ prefillProduct, compact = false }: ContactFormProps) => {
                   className="mt-0.5"
                 />
                 <label htmlFor="dsgvo" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
-                  Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu. *
+                  Ich habe die <Link to="/datenschutz" className="text-primary underline">Datenschutzerklärung</Link> gelesen und stimme der Verarbeitung meiner Daten zu. *
                 </label>
               </div>
               <Button type="submit" size="lg" className="rounded-full px-8 gap-2">

@@ -3,9 +3,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const stats = [
   { value: 30, suffix: "+", label: "Jahre Erfahrung" },
-  { value: 500, suffix: "+", label: "Projekte realisiert" },
-  { value: 25, suffix: "+", label: "Fachzertifikate" },
-  { value: 24, suffix: "h", label: "Notdienst" },
+  { value: 500, suffix: "+", label: "Zufriedene Kunden" },
+  { value: 100, suffix: "%", label: "Zuverlässigkeit" },
+  { value: 5, suffix: "★", label: "Google-Bewertung" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
